@@ -1,0 +1,48 @@
+project:
+  name: Institutional Quant Research Lab
+  description: Cross-sectional equity alpha research and backtesting.
+
+data:
+  start: "2018-01-01"
+  periods: 1250
+  assets: 80
+  seed: 42
+  sectors:
+    - Technology
+    - Financials
+    - Healthcare
+    - Industrials
+    - Consumer
+    - Energy
+    - Utilities
+    - Materials
+
+features:
+  winsorize_zscore: 5.0
+
+model:
+  target: fwd_excess_return_1d
+  train_window: 252
+  purge_days: 2
+  retrain_every: 5
+  ridge_lambda: 25.0
+  half_life_days: 126
+  min_train_observations: 2500
+
+portfolio:
+  selection_quantile: 0.20
+  gross_leverage: 1.0
+  max_abs_weight: 0.05
+  volatility_floor: 0.008
+  cost_bps: 1.5
+  slippage_bps: 1.0
+  sector_neutralize: true
+
+report:
+  enabled: true
+  output_dir: reports/generated
+  title: Equity Statistical Arbitrage Tear Sheet
+
+output:
+  save_intermediate: true
+  data_dir: data/processed

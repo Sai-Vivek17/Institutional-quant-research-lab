@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Equity Statistical Arbitrage Tear Sheet</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      color: #111827;
+      background: #F8FAFC;
+    }
+    header {
+      padding: 40px 7vw 28px;
+      background: #0F172A;
+      color: #F8FAFC;
+    }
+    header p {
+      max-width: 920px;
+      color: #CBD5E1;
+      line-height: 1.55;
+    }
+    main {
+      padding: 28px 7vw 48px;
+    }
+    h1, h2 {
+      margin: 0 0 14px;
+    }
+    section {
+      margin: 0 0 28px;
+      padding: 22px;
+      background: white;
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+    }
+    img {
+      width: 100%;
+      max-width: 1120px;
+      display: block;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: white;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #E5E7EB;
+      text-align: left;
+    }
+    th {
+      color: #475569;
+      font-weight: 650;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Equity Statistical Arbitrage Tear Sheet</h1>
+    <p>
+      Transaction-cost-aware, market-neutral cross-sectional equity strategy.
+      Signals are trained with purged walk-forward validation and evaluated
+      across simulated market regimes to avoid the common notebook-only
+      backtesting mistakes.
+    </p>
+  </header>
+  <main>
+    <div class="grid">
+      <section>
+        <h2>Headline Metrics</h2>
+        <table><tr><th>Days</th><td>932</td></tr>
+<tr><th>Cumulative Return</th><td>113.85%</td></tr>
+<tr><th>Annualized Return</th><td>22.82%</td></tr>
+<tr><th>Annualized Volatility</th><td>4.93%</td></tr>
+<tr><th>Sharpe</th><td>4.20</td></tr>
+<tr><th>Sortino</th><td>6.37</td></tr>
+<tr><th>Max Drawdown</th><td>-3.37%</td></tr>
+<tr><th>Calmar</th><td>6.77</td></tr>
+<tr><th>Hit Rate</th><td>61.37%</td></tr>
+<tr><th>Value At Risk 95</th><td>-0.39%</td></tr>
+<tr><th>Conditional Var 95</th><td>-0.62%</td></tr>
+<tr><th>Average Turnover</th><td>0.47</td></tr>
+<tr><th>Average Gross Exposure</th><td>1.00</td></tr>
+<tr><th>Average Net Exposure</th><td>-0.00</td></tr>
+<tr><th>Information Coefficient</th><td>0.0454</td></tr>
+<tr><th>Rank Ic</th><td>0.0463</td></tr></table>
+      </section>
+      <section>
+        <h2>Regime Stress Test</h2>
+        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>regime</th>
+      <th>days</th>
+      <th>mean_daily_return</th>
+      <th>annualized_return</th>
+      <th>annualized_volatility</th>
+      <th>sharpe</th>
+      <th>hit_rate</th>
+      <th>max_drawdown</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bear</td>
+      <td>288</td>
+      <td>0.0011</td>
+      <td>0.3262</td>
+      <td>0.0462</td>
+      <td>6.1189</td>
+      <td>0.6528</td>
+      <td>-0.0112</td>
+    </tr>
+    <tr>
+      <td>bull</td>
+      <td>88</td>
+      <td>0.0008</td>
+      <td>0.2158</td>
+      <td>0.0363</td>
+      <td>5.3842</td>
+      <td>0.5795</td>
+      <td>-0.0087</td>
+    </tr>
+    <tr>
+      <td>sideways</td>
+      <td>409</td>
+      <td>0.0005</td>
+      <td>0.1369</td>
+      <td>0.0400</td>
+      <td>3.2111</td>
+      <td>0.5844</td>
+      <td>-0.0228</td>
+    </tr>
+    <tr>
+      <td>stress</td>
+      <td>147</td>
+      <td>0.0011</td>
+      <td>0.3280</td>
+      <td>0.0769</td>
+      <td>3.6893</td>
+      <td>0.6395</td>
+      <td>-0.0337</td>
+    </tr>
+  </tbody>
+</table>
+      </section>
+    </div>
+    
+        <section>
+          <h2>Equity Curve</h2>
+          <img src="equity_curve.png" alt="equity curve">
+        </section>
+        
+
+        <section>
+          <h2>Drawdown</h2>
+          <img src="drawdown.png" alt="drawdown">
+        </section>
+        
+
+        <section>
+          <h2>Rolling Sharpe</h2>
+          <img src="rolling_sharpe.png" alt="rolling sharpe">
+        </section>
+        
+
+        <section>
+          <h2>Regime Returns</h2>
+          <img src="regime_returns.png" alt="regime returns">
+        </section>
+        
+
+        <section>
+          <h2>Feature Importance</h2>
+          <img src="feature_importance.png" alt="feature importance">
+        </section>
+        
+  </main>
+</body>
+</html>
